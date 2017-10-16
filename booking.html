@@ -38,11 +38,6 @@
 		{
 			width:80%;
 		}
-		#vn
-		{
-			width:30%;
-			padding-left: 9px;
-		}
 		h5
 		{
 			font-size: 20px;
@@ -126,12 +121,8 @@
     <div class="container" id="bform">
 	    <form class="form-horizontal">
 	     <div class="form-group">
-		            <div class="col-sm-4">
-		    		<h5> Enter Vehicle Number </h5>
-		    	    </div>
-				    <div class="col-sm-10" id="vn">
-				      <input type="text" class="form-control" id="vehicle Number" placeholder="Enter Vehicle Number">
-				    </div>
+		            <h5> Enter Vehicle Number </h5>
+				    <input type="text" class="form-control" id="">
 		 </div>
 		 <br>
 		 <div class="form-group">
@@ -139,16 +130,13 @@
 		    		<div class="col-sm-4">
 		    		<h5> Select Place </h5>
 		    	    </div>
-		    		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="#place">
-		    		<span id="Placedis">Place</span>
-					<span class="caret"></span></button>
-					<ul class="dropdown-menu" id="#placemenu">
-					    <li><a href="#">X Mall</a></li>
-					    <li><a href="#">Y Theatre</a></li>
-					 </ul>
-					  <script>
-						$('.dropdown-menu a').click(function(){
-			            $('#Placedis').text($(this).text());
+					<select class="form-control" id="placemenu">
+						<option value="Xmall"> X Mall</option>
+						<option value="Ymall"> Y Mall </option>
+					</select>
+					<script>
+						$('.form-control option').click(function(){
+			            $('#placemenu').text($(this).text());
 			            });
 			         </script>
 				</div>
@@ -159,16 +147,13 @@
 					<div class="col-sm-4">
 		    		<h5> Select Vehicle Type</h5>
 		    	    </div>
-		    		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"id="#type">
-		    		<span id="Typedis">Type</span>
-					<span class="caret"></span></button>
-					<ul class="dropdown-menu" id="#typemenu">
-					    <li><a href="#">Bike</a></li>
-					    <li><a href="#">Car</a></li>
-					 </ul>
+					<select class="form-control" id="typemenu">
+						<option value="car">Car</option>
+						<option value="bike">Bike</option>
+					</select>
 					  <script>
-			            $('.dropdown-menu a').click(function(){
-			            $('#Typedis').text($(this).text());
+			            $('.form-control option').click(function(){
+			            $('#typemenu').text($(this).text());
 			            });
 			         </script>
 				</div>
@@ -178,19 +163,16 @@
 					<div class="col-sm-4">
 		    		<h5> Select Time Period</h5>
 		    	    </div>
-		    		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"id="#period">
-		    	    <span id="Perioddis">Period</span>
-					<span class="caret"></span></button>
-					<ul class="dropdown-menu" id="#periodmenu">
-					    <li><a href="#">1 hour</a></li>
-					    <li><a href="#">2 hours</a></li>
-					    <li><a href="#">3 hours</a></li>
-					    <li><a href="#">4 hours</a></li>
-					    <li><a href="#">5 hours</a></li>
-					 </ul>
+					<select class="form-control" id="periodmenu">
+					    <option value="1hour"> 1 Hour</option>
+					    <option value="2hours"> 2 Hours</option>
+					    <option value="3hours"> 3 Hours</option>
+					    <option value="4hours"> 4 Hours</option>
+					    <option value="5hours"> 5 Hours</option>
+					</select>
 					 <script>
-			            $('.dropdown-menu a').click(function(){
-			            $('#Perioddis').text($(this).text());
+			            $('.form-control option').click(function(){
+			            $('#periodmenu').text($(this).text());
 			            });
 			        </script>
 				</div>
@@ -258,6 +240,7 @@
          </label>
          </div>
         </div>
+        <input type="submit" value="submit">
         </form>
     </div>
 </body>
